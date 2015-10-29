@@ -1,0 +1,43 @@
+<div style='overflow:auto' >
+<svg id="scatterchart" ng-attr-width = "{{width}}" ng-attr-height = "{{height}}" ng-attr-view_box="{{viewbox}}">
+    <g ng-repeat = "y in yColumn">
+    <circle 
+            class='{{keys[yColumn[$parent.$index]]+"."+$index}}'
+            ng-repeat = "pt in pts"
+            ng-attr-xAxis = '{{pt.xaxis}}'
+            ng-attr-cx = "{{pt[keys[xColumn]]}}"
+            ng-attr-cy = "{{pt[keys[y]]}}"
+            ng-attr-r = "{{radius}}"
+            fill-opacity = "0.5"
+            ng-attr-fill = "{{color($parent.$index)}}"
+            stroke = "black"
+            stroke-width = "0.5"
+            ng-attr-xcolumn = "{{xcolumn}}"
+            ng-attr-ycolumn = "{{ycolumn}}"
+            ng-attr-theme = "{{theme}}"
+            
+       ng-click="onclicks($event,pt)"
+       onmouseover = "this.style.opacity='.5'"
+       onmouseout = "this.style.opacity='1.0'"
+        cursor = "{{cursorstyle}}"
+    >
+     <animate attributeName="r" from="30" ng-attr-to="{{radius}}" dur="1.5s"/> 
+        
+         <title>{{pt['orgdata'][keys[yColumn[$parent.$index]]]}}</title>
+    </circle> 
+    </g>
+    <axis xticks = "xticks" yticks = "yticks" width = "{{width}}" height = "{{height}}" fontsize = "{{fontsize}}" xaxisname = "{{xaxisname}}"></axis>
+</svg>
+        <div style='float: left; border:1px solid black;' align = center>LEGEND
+        <li ng-repeat = "y in yColumn"> 
+            <font ng-attr-color="{{color($index)}}">{{keys[y]}} </font> 
+        </li>  
+            <div style="float: left; border:1px solid black;">LOCATION<br/>
+            <g ng-click = "previousclick($event)"           
+               onmouseover = "this.style.color='green'"
+               onmouseout = "this.style.color='blue'"
+               style="cursor:pointer; color:blue" >{{previousfilename}} </g>
+            <g>{{filecurrent}}</g>
+        </div>
+    </div>
+</div>

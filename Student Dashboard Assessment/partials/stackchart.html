@@ -1,0 +1,43 @@
+<div style='overflow:auto' >
+<svg id="stackchart" ng-attr-width = "{{width}}" ng-attr-height = "{{height}}" ng-attr-view_box="{{viewbox}}">
+    <g ng-repeat = "y in yColumn.slice().reverse()">
+    <rect 
+       class='{{keys[yColumn[$parent.$index]]+"."+$index}}'
+       ng-repeat = "pt in pts"
+       ng-attr-xAxis = '{{pt.xaxis}}'
+       ng-attr-x = "{{pt[keys[xColumn]]}}"
+       ng-attr-y = "{{pt[keys[y]]}}"
+       ng-attr-height = "{{height*0.95-pt[keys[y]]}}"
+       ng-attr-width = "{{barSize}}"
+       ng-attr-fill = "{{color($parent.$index)}}"
+       stroke = "black"
+       stroke-width = "0.5" 
+       ng-attr-xcolumn = "{{xcolumn}}"
+       ng-attr-ycolumn = "{{ycolumn}}"
+       ng-attr-theme = "{{theme}}"
+          
+       ng-click="onclicks($event,pt)"
+       onmouseover = "this.style.opacity='.5'"
+       onmouseout = "this.style.opacity='1.0'"
+        cursor = "{{cursorstyle}}"
+    >
+     <animate attributeName="height" from="0" ng-attr-to="{{height*0.95-pt[keys[y]]}}" dur="1.5s"/>    
+         <title>{{pt['orgdata'][keys[yColumn[$parent.$index]]]}}</title>
+    </rect>
+    
+    </g>
+     <axis xticks = "xticks" yticks = "yticks" width = "{{width}}" height = "{{height}}" fontsize = "{{fontsize}}" xaxisname = "{{xaxisname}}"></axis>
+</svg>
+    <div style='float: left; border:1px solid black;' align = center>LEGEND
+        <li ng-repeat = "y in yColumn.slice().reverse()">
+            <font ng-attr-color="{{color($index)}}">{{keys[y]}} </font> 
+        </li>
+                <div style="float: left; border:1px solid black;">LOCATION<br/>
+            <g ng-click = "previousclick($event)"           
+               onmouseover = "this.style.color='green'"
+               onmouseout = "this.style.color='blue'"
+               style="cursor:pointer; color:blue" >{{previousfilename}} </g>
+            <g>{{filecurrent}}</g>
+        </div>
+    </div>
+</div>

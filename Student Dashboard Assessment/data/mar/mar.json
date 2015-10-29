@@ -1,0 +1,30 @@
+[
+    {
+        "Week": "1",
+        "sales": "21",
+        "sales1": "25",
+        "sales2": "3",
+        "sales3": "49"
+    },
+    {
+        "Week": "2",
+        "sales": "21",
+        "sales1": "35",
+        "sales2": "13",
+        "sales3": "9"
+    },
+    {
+        "Week": "3",
+        "sales": "11",
+        "sales1": "24",
+        "sales2": "2",
+        "sales3": "29"
+    },
+    {
+        "Week": "4",
+        "sales": "21",
+        "sales1": "25",
+        "sales2": "15",
+        "sales3": "75"
+    }
+]

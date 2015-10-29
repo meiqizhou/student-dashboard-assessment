@@ -1,0 +1,36 @@
+[
+{
+"SectionId": "secn20109",
+"Term1": "2.5",
+"Term2": "5.0"
+},
+{
+"SectionId": "secn20110",
+"Term1": "3.5",
+"Term2": "4.5",
+"Term3": "6.0"
+},
+{
+"SectionId": "secn20111",
+"Term1": "2.0",
+"Term2": "5.0",
+"Term3": "6.0"
+},
+{
+"SectionId": "secn20112",
+"Term1": "4.333333333333333",
+"Term2": "4.666666666666667",
+"Term3": "8.0"
+},
+{
+"SectionId": "secn20113",
+"Term1": "3.25",
+"Term2": "5.0"
+},
+{
+"SectionId": "secn20114",
+"Term1": "5.0",
+"Term2": "5.0",
+"Term3": "5.0"
+}
+]

@@ -1,0 +1,57 @@
+<g>
+    <line 
+        x1 = "0"
+        ng-attr-y1 = "{{height * 0.95}}"
+        ng-attr-x2 = "{{width}}"
+        ng-attr-y2 = "{{height * 0.95}}"
+        style="stroke:rgb(0,0,0);stroke-width:0.5;opacity:1"
+    /> 
+    <line 
+        x1 = "0"      
+        y1 = "0"
+        x2 = "0"
+        ng-attr-y2 = "{{height*0.95}}"
+        style="stroke:rgb(0,0,0);stroke-width:0.5;opacity:1"
+    />
+    <g ng-repeat = "tick in xticks">
+			<line  
+		  		ng-attr-x1 = "{{tick.x}}" 
+                ng-attr-y1 = "{{height*0.95}}" 
+                ng-attr-x2 = "{{tick.x}}" 
+                y2 = "0" 
+                style="stroke:rgb(0,0,0);stroke-width:0.5;opacity:0.1"
+		   	/>
+		   	<text text-anchor="head"
+		          ng-attr-x="{{tick.x}}" 
+                  ng-attr-y="{{height*0.98}}" 
+                  fill="Black" 
+                  ng-attr-transform = "rotate(45 {{tick.x}} {{height*0.98}})"
+                  ng-attr-font-size = "{{fontsize}}">{{tick.text}}
+		    </text>
+	</g>
+    <g ng-repeat = "tick in yticks">
+        <line
+            x1 = "0"
+            ng-attr-y1 = "{{tick.y}}"
+            ng-attr-x2 = "{{width}}"
+            ng-attr-y2 = "{{tick.y}}"
+            style="stroke:rgb(0,0,0);stroke-width:0.5;opacity:0.1"
+        />
+        <text text-anchor="end"
+		          ng-attr-x="{{tick.x}}" 
+                  ng-attr-y="{{tick.y}}"
+                  fill="Black" 
+                  transform=""  
+                  font-size="15">{{tick.text}}
+		    </text>
+    </g>
+    
+             <text  text-anchor="middle"
+		          ng-attr-x="{{width/2}}" 
+                  ng-attr-y="{{height*1.03}}" 
+                  fill="Black" 
+                  transform = ""
+                  font-size = "15">{{xaxisname}}
+		    </text>
+</g>
+

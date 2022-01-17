@@ -1,7 +1,7 @@
 #Author 
 HLS design: Quantilus font-end team;
-Hadoop Map-Reduce coding: Boyang Li, Phun;
-Java algorithm design: Boyang Li;
+Hadoop Map-Reduce coding: Meiqi Zhou, Phun;
+Java algorithm design: Meiqi Zhou;
 
 #Student DashBoard Assessment
 
